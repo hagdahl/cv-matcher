@@ -1,0 +1,74 @@
+# config.example -- template for cv-matcher
+# ----------------------------------------------------------------
+# Version: 1.0.0  |  Last updated: 2026-06-26
+# Copy to `config.local` and fill in your local values.
+# `config.local` is .gitignored and must never be committed.
+# No secrets in this file -- placeholders only.
+# Format: TOML.
+#
+# Override order (highest wins):
+#   CLI flag  >  ENV (CV_MATCHER_<SECTION>_<KEY>)  >  config.local  >  config.example  >  code default
+
+[paths]
+project_root = "<PROJECT_ROOT>"
+
+# Read-only data sources (never modified by this project).
+ads_root           = "<ADS_ROOT>"           # folder of job ads to match against
+applications_root  = "<APPLICATIONS_ROOT>"  # per-track application folders
+cv_master          = "<CV_MASTER>"          # consolidated CV / requirements-matrix reference (markdown)
+cv_visual_template = "<CV_TEMPLATE_DOCX>"   # Word template for the visual CV version
+cv_archive         = "<CV_ARCHIVE>"         # older CV versions and skill matrices
+pipeline_file      = "<PIPELINE_FILE>"      # cross-cutting pipeline view (markdown)
+
+# Writable pipeline state -- keep on a fast LOCAL disk, NOT on a synced cloud drive.
+data_root = "<DATA_ROOT>"
+logs_dir  = "<DATA_ROOT>/logs"
+
+[prompt]
+# Versioned master prompt.
+master_prompt_path = "01_docs/standardprompt_v2.md"
+master_version     = "v2.0"
+# Earlier versions kept for traceability.
+archived = ["v1.0"]
+
+[matching]
+# Per-track folder naming: YYYY-MM Company Role
+folder_pattern = "{yyyy_mm} {company} {role}"
+
+# File types produced per track. These tokens are part of the file-naming
+# contract the prompt enforces; keep them stable.
+file_types = [
+    "Annons",                 # job ad
+    "Analys och kravmatris",  # analysis and requirements matrix
+    "CV",
+    "Personligt brev",        # cover letter
+    "Urvalsfragor",           # screening questions
+    "Referenser",             # references
+    "Lessons Learned",
+]
+
+# Version convention for per-track files.
+file_version_pattern = "v{major}.{minor}"
+
+[ats]
+# Aggregated ATS keyword bank (updated as new ads are analyzed).
+aggregate_file = "01_docs/ATS_keywords_aggregerat.md"
+
+# Tier definitions.
+tier_definitions = {
+    "1" = "Verbatim from the ad -- must appear in CV + cover letter",
+    "2" = "Common synonym/paraphrase -- should appear",
+    "3" = "Domain vocabulary -- nice to have",
+    "4" = "Industry jargon -- opportunistic",
+}
+
+[lessons]
+# Aggregated cross-cutting lessons.
+aggregate_file = "01_docs/LESSONS_LEARNED_aggregerat.md"
+# Per-track file inside each ad folder under applications_root.
+per_run_pattern = "{folder_name} Lessons Learned v{major}.{minor}.md"
+
+[run]
+dry_run_default = true
+encoding_self_test = true
+writability_preflight = true
