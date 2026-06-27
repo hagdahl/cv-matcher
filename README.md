@@ -10,7 +10,7 @@ letter, requirements matrix, screening answers, and references per application
 **No personal data is stored in this repository.** All data sources are pointed
 to via `config.local` (your machine-specific copy of `config.example`).
 
-**Related project:** [`jobb-bevakning`](../jobb-bevakning) - watches sources for
+**Related project:** [`job-watch`](../job-watch) - watches sources for
 new ads/assignments and triages them; `cv-matcher` then produces the application.
 The two projects are independent and can be used separately (see
 [Cross-project use](#cross-project-use)).
@@ -43,8 +43,8 @@ The two projects are independent and can be used separately (see
 
 ## Cross-project use
 
-`cv-matcher` and `jobb-bevakning` reference each other but share no code or data
-at runtime. `jobb-bevakning` produces a shortlist of relevant ads; `cv-matcher`
+`cv-matcher` and `job-watch` reference each other but share no code or data
+at runtime. `job-watch` produces a shortlist of relevant ads; `cv-matcher`
 consumes one ad at a time. Each repository is self-contained and versioned
 independently, so you can clone either one alone.
 

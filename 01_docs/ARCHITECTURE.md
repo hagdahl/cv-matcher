@@ -70,7 +70,7 @@ Produce complete job applications (CV, cover letter, requirements matrix, screen
 
 ## 3. Data sources
 
-All read via the assistant's Read/Glob (Windows API). No writes to `ads/` (that is the `jobb-bevakning` project's domain via shared config).
+All read via the assistant's Read/Glob (Windows API). No writes to `ads/` (that is the `job-watch` project's domain via shared config).
 
 **Write destinations:**
 
