@@ -70,5 +70,4 @@ company/customer/contact names; no `config.local`; no
 
 ## License
 
-See [`LICENSE`](LICENSE). (Choose/confirm a license before making the repository
-public - see the pre-publication recommendations.)
+Released under the [MIT License](LICENSE). (c) 2026 David Hagdahl.
