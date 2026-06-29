@@ -10,7 +10,7 @@ letter, requirements matrix, screening answers, and references per application
 **No personal data is stored in this repository.** All data sources are pointed
 to via `config.local` (your machine-specific copy of `config.example`).
 
-**Related project:** [`job-watch`](../job-watch) - watches sources for
+**Related project:** [`job-watch`](https://github.com/hagdahl/job-watch) - watches sources for
 new ads/assignments and triages them; `cv-matcher` then produces the application.
 The two projects are independent and can be used separately (see
 [Cross-project use](#cross-project-use)).
