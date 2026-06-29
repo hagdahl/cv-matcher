@@ -1,7 +1,7 @@
 # cv-matcher .gitignore
-# Versionhanteras enligt A3; A2 förbjuder hemligheter i Git.
+# Version-controlled per A3; A2 forbids secrets in Git.
 
-# Hemligheter och lokal konfig (A2/B13)
+# Secrets and local config (A2/B13)
 config.local
 .env
 .env.*
@@ -10,19 +10,19 @@ config.local
 05_logs/
 *.log
 
-# Exports och temp
+# Exports and temp
 06_exports/
 *.tmp
 *.bak
 _probe.tmp
 
-# Python-state
+# Python state
 __pycache__/
 *.pyc
 .venv/
 venv/
 
-# OS- och editor-skräp
+# OS and editor junk
 .DS_Store
 Thumbs.db
 ~$*
@@ -30,7 +30,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Lokal backup-konfig (miljospecifika sokvagar) - checkas ej in (B13/A2).
+# Local backup config (environment-specific paths) - not committed (B13/A2).
 # Template: cowork-projektbackup\backup.settings.template.ini
 backup.settings.ini
 
