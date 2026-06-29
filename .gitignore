@@ -1,0 +1,45 @@
+# cv-matcher .gitignore
+# Version-controlled per A3; A2 forbids secrets in Git.
+
+# Secrets and local config (A2/B13)
+config.local
+.env
+.env.*
+
+# Logs (B8)
+05_logs/
+*.log
+
+# Exports and temp
+06_exports/
+*.tmp
+*.bak
+_probe.tmp
+
+# Python state
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+~$*
+*.swp
+.vscode/
+.idea/
+
+# Local backup config (environment-specific paths) - not committed (B13/A2).
+# Template: cowork-projektbackup\backup.settings.template.ini
+backup.settings.ini
+
+# Environment instance file (per install, never committed). Template is committed.
+cowork-configurations.md
+
+# --- Publication exclusions (internal / identity-bearing; not for the public repo) ---
+# These stay on the local working copy but are excluded from the published repo.
+00_admin/
+# Upstream Swedish standard copies -- reference the upstream project instead
+cowork-projektinstruktioner_*.md
+cowork-tillampningsbilaga_*.md
